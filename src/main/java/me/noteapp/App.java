@@ -2,12 +2,16 @@ package me.noteapp;
 
 //main class
 
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import me.noteapp.db.DatabaseInitializer;
 
-public class App {
+import static javafx.application.Application.launch;
+
+public class App extends Application {
 
     public static void main (String[] args) {
 
@@ -26,15 +30,26 @@ public class App {
 
         }
 
-        //for running the ui in main thread by default ayi main method vere thread il an run akunath so ith vach main method run akan force cheyum ui work akanel main method run akanam
-        SwingUtilities.invokeLater(() -> {
+        launch(args);
 
-            JFrame frame = new JFrame("Note App");
-            frame.setSize(400,300);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(true);
+    }
 
-        });
+    @Override
+    public void start(Stage primaryStage)throws Exception{
+
+        System.out.println("Java app starting..");
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/LoginView.fxml"));
+
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Login");
+
+        primaryStage.show();;
+
 
     }
 }
