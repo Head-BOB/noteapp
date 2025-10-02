@@ -14,10 +14,9 @@ public class DbConnectionManager {
     public static Connection getConnection() throws SQLException {
 
 
+        Connection conn = DriverManager.getConnection(DB_URL);
 
-            // CONNECtion logic ehere
-
-
+          System.out.println("database connected");
 
 
         return DriverManager.getConnection(DB_URL);

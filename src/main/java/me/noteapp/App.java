@@ -1,13 +1,15 @@
 package me.noteapp;
 
 //main class
-
+import java.sql.Connection;
+import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import me.noteapp.db.DatabaseInitializer;
+import me.noteapp.db.DbConnectionManager;
 
 import static javafx.application.Application.launch;
 
@@ -29,6 +31,13 @@ public class App extends Application {
             System.out.println("Error: " + e.getMessage());
 
         }
+            try (Connection conn = DbConnectionManager.getConnection()) {
+                if (conn != null) {
+                    System.out.println(" Connection successful!");
+                }
+            } catch (SQLException e) {
+                System.err.println(" Connection failed: " + e.getMessage());
+            }
 
         launch(args);
 
