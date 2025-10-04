@@ -80,12 +80,12 @@
       </AnchorPane>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="133.0" layoutY="93.0">
          <image>
-            <Image url="@../../../../../../Downloads/icons8-user-30.png" />
+            <Image url="@/icons/icons8-user-30.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="133.0" layoutY="144.0">
          <image>
-            <Image url="@../../../../../../Downloads/icons8-password-48.png" />
+            <Image url="@/icons/icons8-password-48.png" />
          </image>
       </ImageView>
       <Text fontSmoothingType="LCD" layoutX="55.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NoteApp">
