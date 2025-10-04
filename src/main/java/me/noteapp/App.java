@@ -7,7 +7,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import me.noteapp.db.DatabaseInitializer;
 import me.noteapp.db.DbConnectionManager;
 
@@ -52,7 +54,11 @@ public class App extends Application {
 
         Parent root = loader.load();
 
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
+
         Scene scene = new Scene(root);
+        scene.setFill(Color.TRANSPARENT);
+
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Login");
