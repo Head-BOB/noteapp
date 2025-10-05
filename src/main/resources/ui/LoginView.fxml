@@ -9,17 +9,18 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="389.0" prefWidth="545.0" style="-fx-background-color: linear-gradient(to bottom right, #b5651d, #1a1a1a); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 0, 2); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.5, 0, 5); -fx-text-field-fill: white; -fx-text-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.LoginController">
+<AnchorPane onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="389.0" prefWidth="545.0" style="-fx-background-color: linear-gradient(to bottom right, #b5651d, #1a1a1a); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 0, 2); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.5, 0, 5); -fx-text-field-fill: white; -fx-text-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.LoginController">
    <children>
       <AnchorPane layoutX="167.0" layoutY="62.0" prefHeight="276.0" prefWidth="265.0" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-text-fill: white;">
          <children>
-            <Button layoutX="33.0" layoutY="179.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: #333333; -fx-background-radius: 20; -fx-padding: 6 ,12; -fx-cursor: hand; -fx-background-color: linear-gradient(to right, #ff6600, #ff9900); -fx-scale-x: 1.05; -fx-scale-y: 1.05;" text="LOGIN">
+            <Button layoutX="33.0" layoutY="179.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: #333333; -fx-background-radius: 20; -fx-padding: 6 ,12; -fx-cursor: hand; -fx-background-color: linear-gradient(to right, #ff6600, #ff9900); -fx-scale-x: 1.05; -fx-scale-y: 1.05;" text="LOGIN">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -40,7 +41,7 @@
                   </RadialGradient>
                </textFill>
             </Button>
-            <TextField layoutX="14.0" layoutY="27.0" prefHeight="26.0" prefWidth="213.0" promptText="username:" style="-fx-background-color: transparent; -fx-skin: white; -fx-prompt-text-fill: white; -fx-text-field-fill: white; -fx-text-inner-color: white; -fx-border-color: white; -fx-border-width: 0 0 1 0;">
+            <TextField fx:id="usernameField" layoutX="14.0" layoutY="27.0" prefHeight="26.0" prefWidth="213.0" promptText="username:" style="-fx-background-color: transparent; -fx-skin: white; -fx-prompt-text-fill: white; -fx-text-field-fill: white; -fx-text-inner-color: white; -fx-border-color: white; -fx-border-width: 0 0 1 0;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
@@ -48,7 +49,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <PasswordField layoutX="14.0" layoutY="82.0" prefHeight="26.0" prefWidth="214.0" promptText="Password :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;">
+            <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="82.0" prefHeight="26.0" prefWidth="214.0" promptText="Password :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
@@ -78,6 +79,15 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Text>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button onAction="#handleClose" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: transparent; -fx-background-radius: 50; -fx-cursor: hand;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
    </children>
    <effect>
       <Glow />
