@@ -5,121 +5,87 @@ import java.time.LocalDateTime;
 public class Note {
 
     private int id;
-    private int userid;
+    private int userId;
     private String title;
     private String content;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private boolean isArchieved;
+    private boolean isArchived;
 
-    public Note(int id,int userid,String title,String content,LocalDateTime createdAt,LocalDateTime updatedAt,boolean isArchieved){
-        this.id=id;
-        this.userid=userid;
-        this.title=title;
-        this.content=content;
-        this.createdAt=createdAt;
-        this.updatedAt=updatedAt;
-        this.isArchieved=isArchieved;
+    //constructor
+    public Note(int id, int userId, String title, String content, LocalDateTime createdAt, LocalDateTime updatedAt, boolean isArchived) {
+
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.content = content;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.isArchived = isArchived;
 
     }
-    public int getId(){
+    //getter
+    public int getId() {
         return id;
     }
-    public int userId(){
-        return userid;
+
+    public int getUserId() {
+        return userId;
     }
-    public String getTitle(){
+
+    public String getTitle() {
         return title;
     }
-    public String getContent(){
+
+    public String getContent() {
         return content;
     }
-    public LocalDateTime getCreatedAt(){
+
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
-    public LocalDateTime getUpdatedAt(){
+
+    public  LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
-    public boolean getIsArchieved(){
-        return isArchieved;
+
+    public boolean isArchived() {
+        return isArchived;
     }
-    public void setId(int id){
+
+    //setter
+
+    public void setId(int id) {
         this.id = id;
     }
-    public void setUserid(int userid){
-        this.userid=userid;
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
-    public void setTitle(String title){
-        this.title=title;
+
+    public void setTitle(String title) {
+        this.title = title;
     }
-    public void setContent(String content){
-        this.content=content;
+
+    public void setContent(String content) {
+        this.content = content;
     }
-    public void setCreatedAt(LocalDateTime createdAt){
-        this.createdAt=createdAt;
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
-    public void setUpdatedAt(LocalDateTime updatedAt){
-        this.updatedAt=updatedAt;
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
-    public void setArchieved(boolean isArchieved){
-        this.isArchieved=isArchieved;
+
+    public void setArchived(boolean archived) {
+        isArchived = archived;
     }
+
+    @Override
+    public String toString() {
+        return "Note{id=" + id + ", title='" + title + "', userId=" + userId + ", archived=" + isArchived + '}';
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

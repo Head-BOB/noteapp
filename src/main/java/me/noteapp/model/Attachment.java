@@ -3,31 +3,34 @@ package me.noteapp.model;
 import java.time.LocalDateTime;
 
 public class Attachment {
-        private int id;
-        private int notId;
-        private String filename;
-        private String filepath;
-        private String filetype;
-        private LocalDateTime uploadAt;
+
+    private int id;
+    private int noteId;
+    private String filename;
+    private String filepath;
+    private String filetype;
+    private LocalDateTime uploadedAt;
 
 
+    public Attachment(int id, int noteId, String filename, String filepath, String filetype, LocalDateTime uploadedAt) {
 
-        public Attachment(int id,int notId, String filename,String filepath,String filetype,LocalDateTime uploadAt){
-            this.id=id;
-            this.notId=notId;
-            this.filename=filename;
-            this.filepath=filepath;
-            this.filetype=filetype;
-            this.uploadAt=uploadAt;
-        }
+        this.id = id;
+        this.noteId = noteId;
+        this.filename = filename;
+        this.filepath = filepath;
+        this.filetype = filetype;
+        this.uploadedAt = uploadedAt;
+
+    }
 
 
-        public int getId(){
-            return id;
-        }
+    //getters
+    public int getId() {
+        return id;
+    }
 
-    public int getNotId() {
-        return notId;
+    public int getNoteId() {
+        return noteId;
     }
 
     public String getFilename() {
@@ -42,20 +45,19 @@ public class Attachment {
         return filetype;
     }
 
-    public String getFiletype(String filetype) {
-        return filetype;
+    public LocalDateTime getUploadedAt() {
+        return uploadedAt;
     }
 
-    public LocalDateTime getUploadAt() {
-        return uploadAt;
-    }
+    //setters
+
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setNotId(int notId) {
-        this.notId = notId;
+    public void setNoteId(int noteId) {
+        this.noteId = noteId;
     }
 
     public void setFilename(String filename) {
@@ -70,8 +72,14 @@ public class Attachment {
         this.filetype = filetype;
     }
 
-    public void setUploadAt(LocalDateTime uploadAt) {
-        this.uploadAt = uploadAt;
+    public void setUploadedAt(LocalDateTime uploadedAt) {
+        this.uploadedAt = uploadedAt;
     }
-    //all data related to a single attachment here image pdf allel enthelum videos
+
+    @Override
+    public String toString() {
+        return "Attachment{id=" + id + ", filename='" + filename + "', noteId=" + noteId + '}';
+
+    }
+
 }
