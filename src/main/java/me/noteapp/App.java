@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import me.noteapp.db.DatabaseInitializer;
 import me.noteapp.db.DbConnectionManager;
+import me.noteapp.util.SceneSwitcher;
 
 import static javafx.application.Application.launch;
 
@@ -33,13 +34,13 @@ public class App extends Application {
             System.out.println("Error: " + e.getMessage());
 
         }
-            try (Connection conn = DbConnectionManager.getConnection()) {
-                if (conn != null) {
-                    System.out.println(" Connection successful!");
-                }
-            } catch (SQLException e) {
-                System.err.println(" Connection failed: " + e.getMessage());
+        try (Connection conn = DbConnectionManager.getConnection()) {
+            if (conn != null) {
+                System.out.println(" Connection successful!");
             }
+        } catch (SQLException e) {
+            System.err.println(" Connection failed: " + e.getMessage());
+        }
 
         launch(args);
 
@@ -50,20 +51,9 @@ public class App extends Application {
 
         System.out.println("Java app starting..");
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/NoteEditorPane.fxml"));
-
-        Parent root = loader.load();
-
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
-
-
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("NoteEditorPane");
-
-        primaryStage.show();;
+        SceneSwitcher.switchScene(primaryStage, "/ui/LoginView.fxml", "NoteAppLogin");
 
 
     }
