@@ -50,7 +50,7 @@ public class App extends Application {
 
         System.out.println("Java app starting..");
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/LoginView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/NoteEditorPane.fxml"));
 
         Parent root = loader.load();
 
@@ -61,7 +61,7 @@ public class App extends Application {
 
 
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("NoteEditorPane");
 
         primaryStage.show();;
 
