@@ -55,24 +55,6 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <Button layoutX="43.0" layoutY="123.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-font-fill: white;" text="forget password?">
-               <textFill>
-                  <RadialGradient centerX="1.0" radius="0.5">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </RadialGradient>
-               </textFill>
-            </Button>
          </children>
          <effect>
             <Blend opacity="0.38" />
