@@ -7,8 +7,9 @@
 
 <AnchorPane prefHeight="743.0" prefWidth="951.0" style="-fx-background-color: #25222B;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.MainApplicationController">
    <children>
-      <VBox layoutX="14.0" layoutY="100.0" prefHeight="626.0" prefWidth="276.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 10;" />
+      <VBox fx:id="noteListContainer" layoutX="14.0" layoutY="100.0" prefHeight="626.0" prefWidth="207.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 10;" />
       <Label layoutX="14.0" layoutY="14.0" prefHeight="70.0" prefWidth="923.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 10;" />
       <Button layoutX="800.0" layoutY="29.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="92.0" style="-fx-background-color: #B0FC38; -fx-text-fill: BLACK;" text="+Notes" textAlignment="CENTER" />
+      <VBox fx:id="noteEditorContainer" layoutX="244.0" layoutY="100.0" prefHeight="626.0" prefWidth="507.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 10;" />
    </children>
 </AnchorPane>

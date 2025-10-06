@@ -45,6 +45,7 @@
             <Font name="Arial Italic" size="12.0" />
          </font>
       </Text>
+
       <ImageView fitHeight="20.0" fitWidth="25.0" layoutX="94.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/icons8-email-12.png" />
