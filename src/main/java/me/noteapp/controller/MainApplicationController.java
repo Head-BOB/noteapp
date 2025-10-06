@@ -8,17 +8,23 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import me.noteapp.controller.NoteListController;
+import me.noteapp.controller.NoteEditorController;
 
 public class MainApplicationController {
     private double xOffset = 0;
     private double yOffset = 0;
 
     @FXML
-    private AnchorPane noteListContainer;
+    private VBox noteListContainer;
 
     @FXML
-    private AnchorPane noteEditorContainer;
+    private VBox noteEditorContainer;
+
+    private NoteListController noteListController;
+    private NoteEditorController noteEditorController;
 
 
 
@@ -38,12 +44,6 @@ public class MainApplicationController {
         stage.setY(event.getScreenY() - yOffset);
 
     }
-    public void handleMinimize(ActionEvent event){
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setIconified(true);
-
-    }
 
     @FXML
     public void handleClose(ActionEvent event){
@@ -57,26 +57,49 @@ public class MainApplicationController {
 
         System.out.println("MainApplication controller initialized..");
         loadNoteList();
+        loadNoteEditor();
     }
 
-    public void loadNoteList() {
+    @FXML
+    void handleNewNoteAction(ActionEvent event) {
+        System.out.println("+ Notes button clicked");
+        if (noteEditorController != null) {
+            noteEditorController.clearEditor();
+        }
+    }
 
-        try{
-
-            FXMLLoader loader =  new FXMLLoader(getClass().getResource("/ui/NoteListPane.fxml"));
+    private void loadNoteList() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/NoteListPane.fxml"));
             AnchorPane noteListPane = loader.load();
-
+            noteListController = loader.getController();
+            noteListController.setMainController(this);
             noteListContainer.getChildren().add(noteListPane);
-
-            AnchorPane.setTopAnchor(noteListPane, 0.0);
-            AnchorPane.setBottomAnchor(noteListPane, 0.0);
-            AnchorPane.setLeftAnchor(noteListPane, 0.0);
-            AnchorPane.setRightAnchor(noteListPane, 0.0);
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    private void loadNoteEditor() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/NoteEditorPane.fxml"));
+            AnchorPane noteEditorPane = loader.load();
+            noteEditorController = loader.getController();
+            noteEditorContainer.getChildren().add(noteEditorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void onNoteSelected(String noteTitle) {
+        System.out.println("Main controller test " + noteTitle);
+        if (noteEditorController != null) {
+            noteEditorController.displayNoteDetails(noteTitle);
+        }
+    }
+
+
+
+
 
 }
