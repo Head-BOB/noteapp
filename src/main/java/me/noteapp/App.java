@@ -53,7 +53,7 @@ public class App extends Application {
 
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 
-        SceneSwitcher.switchScene(primaryStage, "/ui/LoginView.fxml", "NoteAppLogin");
+        SceneSwitcher.switchScene(primaryStage, "/ui/LoginView.fxml", "Login");
 
 
     }
