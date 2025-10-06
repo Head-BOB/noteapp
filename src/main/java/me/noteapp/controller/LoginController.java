@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 
 public class LoginController {
 
+
+
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -30,14 +32,12 @@ public class LoginController {
         stage.setY(event.getScreenY() - yOffset);
 
     }
-
-    /*@FXML
     public void handleMinimize(ActionEvent event){
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
 
-    }*/
+    }
 
     @FXML
     public void handleClose(ActionEvent event){
