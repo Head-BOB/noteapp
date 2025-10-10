@@ -1,6 +1,7 @@
 package me.noteapp.model;
 
-public class Category {
+import java.time.LocalDateTime;
 
-    // ore single category data handling here
+public class Category {
+    //
 }

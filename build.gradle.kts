@@ -16,6 +16,10 @@ javafx {
     modules = listOf("javafx.controls", "javafx.fxml")
 }
 
+tasks.named<JavaExec>("run") {
+    jvmArgs("--add-modules", "java.desktop")
+}
+
 application {
     mainClass.set("me.noteapp.App")
 }
@@ -24,6 +28,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("org.xerial:sqlite-jdbc:3.45.1.0")
+    implementation("org.controlsfx:controlsfx:11.2.0")
 }
 
 tasks.test {

@@ -1,0 +1,73 @@
+
+.list-view {
+    -fx-background-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+}
+
+.list-cell:filled {
+    -fx-background-color: #36393F;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 7px;
+    -fx-background-insets: 3px 5px 3px 5px;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #40444B;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #4f545c;
+}
+
+
+#noteListView .corner {
+    -fx-background-color: transparent;
+}
+
+#noteListView .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 5px;
+}
+
+#noteListView .scroll-bar:vertical .thumb {
+    -fx-background-color: #4A5568;
+    -fx-background-radius: 5px;
+}
+
+#noteListView .scroll-bar .increment-button,
+#noteListView .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.check-list-view {
+    -fx-control-inner-background: #36393F;
+    -fx-border-color: #4A5568;
+    -fx-border-radius: 5;
+}
+
+.check-list-view .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.check-list-view .list-cell:hover {
+    -fx-background-color: #40444B;
+}
+
+.check-list-view .check-box .box {
+    -fx-background-color: transparent;
+    -fx-border-color: #98C379;
+    -fx-border-radius: 3;
+}
+
+.check-list-view .check-box:selected .mark {
+    -fx-background-color: #98C379;
+}

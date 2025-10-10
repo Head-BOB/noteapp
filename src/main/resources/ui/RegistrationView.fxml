@@ -6,60 +6,53 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="400.0" prefWidth="419.0" style="-fx-background-color: #25222B; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.RegistrationController">
-   <children>
-      <AnchorPane layoutX="121.0" layoutY="82.0" prefHeight="222.0" prefWidth="218.0">
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.RegistrationController">
+   <top>
+      <fx:include source="TitleBar.fxml" />
+   </top>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="419.0" style="-fx-background-color: #25222B;">
          <children>
-            <TextField layoutX="2.0" layoutY="73.0" prefHeight="28.0" prefWidth="213.0" promptText="Enter username :" style="-fx-background-color: tranparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
-            <TextField layoutX="1.0" layoutY="14.0" prefHeight="28.0" prefWidth="214.0" promptText="Enter email :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
-            <PasswordField layoutX="2.0" layoutY="124.0" prefHeight="28.0" prefWidth="214.0" promptText="Password :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
-            <PasswordField layoutX="1.0" layoutY="180.0" prefHeight="28.0" prefWidth="214.0" promptText="ConfirmPassword :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
+            <AnchorPane layoutX="121.0" layoutY="82.0" prefHeight="222.0" prefWidth="218.0">
+               <children>
+                  <TextField fx:id="usernameField" layoutX="2.0" layoutY="73.0" prefHeight="28.0" prefWidth="213.0" promptText="Enter username :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
+                  <TextField fx:id="emailField" layoutX="1.0" layoutY="14.0" prefHeight="28.0" prefWidth="214.0" promptText="Enter email :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
+                  <PasswordField fx:id="passwordField" layoutX="2.0" layoutY="124.0" prefHeight="28.0" prefWidth="214.0" promptText="Password :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
+                  <PasswordField layoutX="1.0" layoutY="180.0" prefHeight="28.0" prefWidth="214.0" promptText="ConfirmPassword :" style="-fx-background-color: transparent; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-border-color: white; -fx-border-width: 0 0 2 0;" />
+               </children>
+            </AnchorPane>
+            <Text fill="#fffbfb" layoutX="121.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRATION INFO.">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Text>
+            <Button onAction="#handleRegisterButtonAction" layoutX="171.0" layoutY="327.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #B0FC38;" text="REGISTER" textFill="#4b4242" />
+            <ImageView fitHeight="19.0" fitWidth="20.0" layoutX="94.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-password-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="94.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-password-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="94.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-user-30.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="24.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NoteApp" textAlignment="CENTER" />
+            <ImageView fitHeight="20.0" fitWidth="25.0" layoutX="94.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8-email-12.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Text fill="#fffbfb" layoutX="121.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRATION INFO.">
-         <font>
-            <Font name="Arial" size="17.0" />
-         </font>
-      </Text>
-      <Button layoutX="171.0" layoutY="327.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #B0FC38; -fx-prompt-text-fill: white;" text="REGISTER" textFill="#4b4242" />
-      <ImageView fitHeight="19.0" fitWidth="20.0" layoutX="94.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/icons8-password-48.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="94.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/icons8-password-48.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="94.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/icons8-user-30.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="24.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NoteApp" textAlignment="CENTER" wrappingWidth="77.59999999999991">
-         <font>
-            <Font name="Arial Italic" size="12.0" />
-         </font>
-      </Text>
-
-      <ImageView fitHeight="20.0" fitWidth="25.0" layoutX="94.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icons/icons8-email-12.png" />
-         </image>
-      </ImageView>
-      <HBox layoutX="371.0" layoutY="2.0" prefHeight="100.0" prefWidth="48.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#handleClose" prefHeight="34.0" prefWidth="44.0" style="-fx-background-color: transparent; -fx-prompt-text-fill: black; -fx-text-fill: black;" text="X">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>

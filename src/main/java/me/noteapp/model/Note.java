@@ -85,7 +85,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note{id=" + id + ", title='" + title + "', userId=" + userId + ", archived=" + isArchived + '}';
+        return this.title;
     }
 
 }

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="246.0" prefWidth="331.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.NoteListController">
    <children>
-      <ChoiceBox layoutX="179.0" layoutY="12.0" prefHeight="44.0" prefWidth="142.0" style="-fx-background-color: #25222B; -fx-background-radius: 10;" />
+      <ListView fx:id="noteListView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
+
+   <stylesheets>
+      <URL value="@../css/list-styles.css" />
+   </stylesheets>
 </AnchorPane>
