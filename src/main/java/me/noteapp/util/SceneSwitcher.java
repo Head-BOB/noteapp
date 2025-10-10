@@ -10,16 +10,20 @@ import java.io.IOException;
 
 public class SceneSwitcher {
 
-    public static void switchScene(Stage stage, String fxmlPath, String title)throws IOException {
-
+    public static Scene switchScene(Stage stage, String fxmlPath, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader(SceneSwitcher.class.getResource(fxmlPath));
-
         Parent root = loader.load();
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
+
+        scene.getStylesheets().add(SceneSwitcher.class.getResource("/css/list-styles.css").toExternalForm());
+
         stage.setScene(scene);
         stage.setTitle(title);
-        stage.show();
 
+        ResizeHelper.addResizeListener(stage);
+
+        stage.show();
+        return scene;
     }
 }

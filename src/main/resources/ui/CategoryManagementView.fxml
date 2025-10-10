@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckListView?>
+
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="380.0" spacing="10.0" style="-fx-background-color: #282c34; -fx-background-radius: 8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.CategoryManagementController">
+    <children>
+        <fx:include source="TitleBar.fxml" />
+
+        <Label text="Manage Categories" textFill="white">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+            <VBox.margin>
+                <Insets left="15.0" right="15.0" top="5.0" />
+            </VBox.margin>
+        </Label>
+
+        <CheckListView fx:id="categoriesListView" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets left="15.0" right="15.0" />
+            </VBox.margin>
+        </CheckListView>
+
+        <HBox alignment="CENTER" spacing="10.0">
+            <children>
+                <TextField fx:id="newCategoryField" HBox.hgrow="ALWAYS" promptText="Create new category..." style="-fx-background-color: #36393F; -fx-text-fill: white; -fx-background-radius: 5;" />
+                <Button fx:id="addNewCategoryButton" mnemonicParsing="false" onAction="#handleAddNewCategory" prefWidth="60.0" text="Add" />
+            </children>
+            <VBox.margin>
+                <Insets left="15.0" right="15.0" top="5.0" />
+            </VBox.margin>
+        </HBox>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" prefWidth="80.0" style="-fx-background-color: #4A5568; -fx-text-fill: white;" text="Cancel" />
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave" prefWidth="80.0" style="-fx-background-color: #98C379; -fx-text-fill: black;" text="Save" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>

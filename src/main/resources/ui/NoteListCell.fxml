@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cellLayout" prefHeight="60.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="titleLabel" text="Note Title Goes Here" textFill="white" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

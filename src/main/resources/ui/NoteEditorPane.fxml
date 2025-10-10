@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="489.0" prefWidth="444.0" style="-fx-background-color: #25222B;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.NoteEditorController">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #282c34;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.noteapp.controller.NoteEditorController">
    <children>
-      <AnchorPane layoutX="15.0" layoutY="66.0" prefHeight="407.0" prefWidth="414.0" style="-fx-background-color: #2b2a33; -fx-background-radius: 10;">
+      <HBox alignment="CENTER_RIGHT" spacing="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
-            <TextArea fx:id="contentArea" prefHeight="407.0" prefWidth="414.0" promptText="Start writing your note..." style="-fx-control-inner-background: #2B2A33; -fx-text-fill: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-         </children>
-      </AnchorPane>
-      <TextField fx:id="titleField" layoutX="15.0" layoutY="14.0" prefHeight="39.0" prefWidth="198.0" promptText="Note Title" style="-fx-background-color: #2B2A33; -fx-text-fill: white; -fx-background-radius: 10;">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <HBox alignment="CENTER_RIGHT" layoutX="221.0" layoutY="14.0" prefHeight="39.0" prefWidth="214.0" spacing="10.0" style="-fx-background-color: #2B2A33; -fx-background-radius: 10; -fx-padding: 0 10 0 0;">
-         <children>
-            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #B0FC38;" text="Save" textFill="#4b4242">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
+            <Button fx:id="categoryButton" mnemonicParsing="false" onAction="#handleCategoryButtonAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #36393F; -fx-text-fill: white; -fx-background-radius: 8;" text="Categories" />
+            <Button fx:id="attachFileButton" mnemonicParsing="false" onAction="#handleAttachFileAction" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #36393F; -fx-text-fill: white; -fx-background-radius: 8;" text="Attach File" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteButtonAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #e06c75; -fx-text-fill: white; -fx-background-radius: 8;" text="Delete" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #ADFF2F; -fx-text-fill: black; -fx-background-radius: 8;" text="Save" />
          </children>
       </HBox>
+      <TextField fx:id="titleField" promptText="Note Title..." style="-fx-background-color: #36393F; -fx-text-fill: white; -fx-background-radius: 8;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="20.0" />
+
+      <TextArea fx:id="contentArea" layoutX="20.0" layoutY="65.0" promptText="Start writing your note here..." style="-fx-control-inner-background:#282c34; -fx-background-color: #282c34; -fx-text-fill: white; -fx-border-color: #4A5568; -fx-border-radius: 8;" wrapText="true" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="65.0" />
+
+      <HBox fx:id="timestampContainer" alignment="CENTER_LEFT" layoutX="25.0" layoutY="410.0" spacing="20.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="25.0">
+         <children>
+            <Label fx:id="createdAtLabel" text="Created: " textFill="grey" />
+            <Label fx:id="updatedAtLabel" text="Modified: " textFill="grey" />
+         </children>
+      </HBox>
+
+      <VBox fx:id="attachmentContainer" layoutX="20.0" layoutY="470.0" spacing="5.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </AnchorPane>

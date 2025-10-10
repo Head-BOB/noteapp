@@ -2,11 +2,13 @@ package me.noteapp.controller;
 
 import javafx.fxml.FXML;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
@@ -32,7 +34,6 @@ public class LoginController {
 
     @FXML
     public void handleLoginButtonAction(ActionEvent event) {
-
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -45,19 +46,25 @@ public class LoginController {
             User user = userService.loginUser(username, password);
 
             if(user != null) {
-
                 SessonManager.login(user.getId());
 
                 Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                SceneSwitcher.switchScene(currentStage, "/ui/MainApplicationView.fxml", "Note App");
+
+                Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+                double width = screenBounds.getWidth() * 0.7;
+                double height = screenBounds.getHeight() * 0.75;
+
+                currentStage.setWidth(width);
+                currentStage.setHeight(height);
+
+                currentStage.centerOnScreen();
+               SceneSwitcher.switchScene(currentStage, "/ui/MainApplicationView.fxml", "Note App"); //
             } else {
                 showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
             }
-        } catch (SQLException e) {
-            showAlert(Alert.AlertType.ERROR, "Database Error", "A database error occurred. Please try again.");
-            e.printStackTrace();
-        } catch (IOException e) {
-            showAlert(Alert.AlertType.ERROR, "UI Error", "Failed to load the main application view.");
+        } catch (SQLException | IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Application Error", "An error occurred: " + e.getMessage());
             e.printStackTrace();
         }
     }
